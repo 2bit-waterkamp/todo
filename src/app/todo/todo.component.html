@@ -1,1 +1,14 @@
-<p>Hello World!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>📝 Todo's</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let item of items">
+                <div>
+                    <span>{{item.description}}</span>
+                </div>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
