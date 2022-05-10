@@ -12,12 +12,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { TodoComponent } from './todo/todo.component';
+import { TodosPipe } from './pipes/todos.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    TodoComponent
+    TodoComponent,
+    TodosPipe
   ],
   imports: [
     BrowserModule,
