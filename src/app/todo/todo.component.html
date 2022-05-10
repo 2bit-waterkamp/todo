@@ -4,9 +4,9 @@
     </mat-card-header>
     <mat-card-content>
         <mat-list>
-            <mat-list-item *ngFor="let item of (items | todos: false)">
+            <mat-list-item *ngFor="let open of (items | todos: false)">
                 <div>
-                    <span>{{item.description}}</span>
+                    <mat-checkbox [(ngModel)]="open.checked">{{open.description}}</mat-checkbox>
                 </div>
             </mat-list-item>
         </mat-list>
