@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { TodoItem } from '../models/todo-items';
 
 @Component({
@@ -17,22 +16,10 @@ export class TodoComponent {
     { id: 5, checked: false, description: 'Todos erledigen' }
   ]
 
-  public todoForm: FormGroup = new FormGroup({
-    description: new FormControl(null, [Validators.required])
-  });
 
-  public onAdd(form: FormGroupDirective) {
-    if (this.todoForm.valid && this.todoForm.dirty) {
-      this.items.push({
-        id: this.items.length + 1,
-        description: this.todoForm.value.description,
-        checked: false
-      })
-    }
-
-    form.resetForm();
-    this.todoForm.reset();
-    this.todoForm.get('description')?.markAsUntouched();
+  public onAdded(todo: TodoItem) {
+    this.items.push(todo);
   }
+
 
 }
