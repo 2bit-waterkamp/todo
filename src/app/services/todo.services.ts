@@ -1,13 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { catchError, Observable, tap } from 'rxjs';
 import { TodoItem } from '../models/todo-items';
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private snackbar: MatSnackBar) { }
 
     public load(): Observable<TodoItem[]> {
-        return this.http.get<TodoItem[]>('assets/todos.json');
+        return this.http.get<TodoItem[]>('assets/todos.json').pipe(
+            tap(() => this.snackbar.open('Todos successfully loaded', undefined, { duration: 2000 })),
+            catchError((e) => {
+                console.error(e);
+                this.snackbar.open('Could not load todos', 'OK');
+                return [];
+            })
+        )
     }
 }
