@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TodoItem } from '../models/todo-items';
 
 @Component({
@@ -15,5 +16,9 @@ export class TodoComponent {
     { id: 4, checked: false, description: 'Todos hinzufügen' },
     { id: 5, checked: false, description: 'Todos erledigen' }
   ]
+
+  public todoForm: FormGroup = new FormGroup({
+    description: new FormControl(null, [Validators.required])
+  });
 
 }
