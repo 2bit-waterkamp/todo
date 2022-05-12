@@ -21,4 +21,14 @@ export class TodoComponent {
     description: new FormControl(null, [Validators.required])
   });
 
+  public onAdd() {
+    if (this.todoForm.valid && this.todoForm.dirty) {
+      this.items.push({
+        id: this.items.length + 1,
+        description: this.todoForm.value.description,
+        checked: false
+      })
+    }
+  }
+
 }
