@@ -1,24 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoItem } from '../models/todo-items';
+import { TodoService } from '../services/todo.services';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent {
+export class TodoComponent implements OnInit {
 
-  public items: Array<TodoItem> = [
-    { id: 1, checked: false, description: 'Erste Angular Applikation erstellen' },
-    { id: 2, checked: false, description: 'Todo Komponente erstellen' },
-    { id: 3, checked: false, description: 'Todos anzeigen' },
-    { id: 4, checked: false, description: 'Todos hinzufügen' },
-    { id: 5, checked: false, description: 'Todos erledigen' }
-  ]
+  constructor(private todoService: TodoService) { }
+
+  public items: Array<TodoItem> = [];
 
 
   public onAdded(todo: TodoItem) {
     this.items.push(todo);
+  }
+
+  public ngOnInit(): void {
+    this.todoService.load().subscribe(todos => this.items = todos);
   }
 
 

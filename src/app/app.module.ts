@@ -17,6 +17,7 @@ import { TodoComponent } from './todo/todo.component';
 import { TodosPipe } from './pipes/todos.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TodoAddComponent } from './todo-add/todo-add.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TodoAddComponent } from './todo-add/todo-add.component';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
