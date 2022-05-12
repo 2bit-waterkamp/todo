@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { TodoItem } from '../models/todo-items';
 
 @Component({
@@ -21,7 +21,7 @@ export class TodoComponent {
     description: new FormControl(null, [Validators.required])
   });
 
-  public onAdd() {
+  public onAdd(form: FormGroupDirective) {
     if (this.todoForm.valid && this.todoForm.dirty) {
       this.items.push({
         id: this.items.length + 1,
@@ -29,6 +29,10 @@ export class TodoComponent {
         checked: false
       })
     }
+
+    form.resetForm();
+    this.todoForm.reset();
+    this.todoForm.get('description')?.markAsUntouched();
   }
 
 }

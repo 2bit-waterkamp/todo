@@ -29,7 +29,7 @@
 </mat-card>
 
 <mat-card>
-    <form [formGroup]="todoForm" (ngSubmit)="onAdd()">
+    <form [formGroup]="todoForm" #formGroupDirective="ngForm" (ngSubmit)="onAdd(formGroupDirective)">
         <mat-card-header>
             <mat-card-title>
                 Neues Todo erstellen
