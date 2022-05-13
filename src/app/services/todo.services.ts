@@ -22,4 +22,12 @@ export class TodoService {
             })
         ).subscribe(todos => this.items = todos);
     }
+
+    public add(description: string) {
+        this.items.push({
+            id: this.items.length + 1,
+            description,
+            checked: false
+        })
+    }
 }
