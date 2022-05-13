@@ -6,44 +6,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { TodoComponent } from './todo/todo.component';
-import { TodosPipe } from './pipes/todos.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TodoAddComponent } from './todo-add/todo-add.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoModule } from './todo/todo.module';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    TodoComponent,
-    TodosPipe,
-    TodoAddComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
     MatSidenavModule,
+    MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatCardModule,
-    MatCheckboxModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
     HttpClientModule,
-    MatSnackBarModule
+    TodoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
