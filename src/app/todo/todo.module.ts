@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { TodoRoutingModule } from './todo-routing.module';
 
 
 
@@ -26,6 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   ],
   imports: [
     CommonModule,
+    TodoRoutingModule,
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,

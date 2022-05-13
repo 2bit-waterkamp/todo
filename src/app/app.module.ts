@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoModule } from './todo/todo.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -22,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     LayoutModule,
     MatSidenavModule,
     MatToolbarModule,
