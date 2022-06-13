@@ -27,3 +27,5 @@
         </mat-list>
     </mat-card-content>
 </mat-card>
+
+<app-todo-add (added)="onAdded($event)" [currentMaxId]="items.length"></app-todo-add>
