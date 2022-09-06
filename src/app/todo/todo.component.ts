@@ -28,11 +28,10 @@ export class TodoComponent {
         description: this.todoForm.value.description,
         checked: false
       })
+
+      form.resetForm();
     }
 
-    form.resetForm();
-    this.todoForm.reset();
-    this.todoForm.get('description')?.markAsUntouched();
   }
 
 }
