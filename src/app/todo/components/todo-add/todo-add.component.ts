@@ -28,8 +28,6 @@ export class TodoAddComponent {
       });
 
       form.resetForm();
-      this.todoForm.reset();
-      this.todoForm.get('description')?.markAsUntouched();
     }
   }
 
