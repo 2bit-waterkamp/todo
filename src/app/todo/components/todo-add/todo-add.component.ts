@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
-import { TodoService } from 'src/app/services/todo.services';
+import { TodoService } from 'src/app/services/todo.service';
 import { TodoItem } from '../../../models/todo-item';
 
 @Component({
