@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, Observable, tap } from 'rxjs';
-import { TodoItem } from '../models/todo-items';
+import { TodoItem } from '../models/todo-item';
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {
