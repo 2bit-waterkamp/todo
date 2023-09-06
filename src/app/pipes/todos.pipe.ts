@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TodoItem } from '../models/todo-items';
+import { TodoItem } from '../models/todo-item';
 
 @Pipe({ name: 'todos' })
 export class TodosPipe implements PipeTransform {
